@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>متجر عبدو — Zuwam Shop</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Tahoma", sans-serif;
+    background: #f0f4f8;
+    position: relative;
+}
+body::before {
+    content: "zuwam";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: rgba(0,0,0,0.05);
+    font-weight: 900;
+    z-index: 0;
+    pointer-events: none;
+}
+
+header {
+    background: linear-gradient(135deg, #003f8c, #007bff);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 15px;
+    text-align: center;
+    flex: 1;
+}
+
+.info h3 {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#cart-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #28a745;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 50px;
+    z-index: 5;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header>🔥 متجر عبدو — أفضل المنتجات 🔥</header>
+
+<div class="container">
+    <h2>منتجاتنا</h2>
+    <div id="products" class="product-grid"></div>
+</div>
+
+<a id="cart-btn" href="#" onclick="openCart()">🛒 السلة</a>
+
+<!-- نافذة السلة -->
+<div id="cart-window" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); width:90%; max-width:600px; background:#fff; padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.25); z-index:10;">
+    <h2>🛒 سلة المشتريات</h2>
+    <table id="cart-table" style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th>المنتج</th>
+                <th>السعر</th>
+                <th>الكمية</th>
+                <th>الإجمالي</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <p id="total" style="text-align:right; margin-top:10px; font-weight:bold;"></p>
+    <button onclick="sendWhatsApp()" style="background:#25D366; color:white; padding:10px 16px; border:none; border-radius:8px; cursor:pointer; margin-top:10px;">📲 إرسال الطلب على واتساب</button>
+    <button onclick="closeCart()" style="background:#ff4d4d; color:white; padding:10px 16px; border:none; border-radius:8px; cursor:pointer; margin-top:10px; float:left;">❌ إغلاق</button>
+</div>
+
+<script>
+// تحميل المنتجات من localStorage أو JSON افتراضي
+let defaultProducts = [
+    {id:1,name:"ضوء مغناطيسي للسيلفي",description:"إضاءة هادئة ومريحة.",price:45,image:"https://images.unsplash.com/photo-1612817159949-195b38834d98?auto=format&fit=crop&w=600&q=80"},
+    {id:2,name:"سماعات بلوتوث",description:"صوت عالي الجودة.",price:60,image:"https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=600&q=80"},
+    {id:3,name:"شاحن سريع",description:"شاحن 30W سريع.",price:30,image:"https://images.unsplash.com/photo-1584270354949-1a4e76fd2291?auto=format&fit=crop&w=600&q=80"},
+    {id:4,name:"باور بانك",description:"سعة 20000mAh.",price:120,image:"https://images.unsplash.com/photo-1580910051074-7de475b6f39a?auto=format&fit=crop&w=600&q=80"}
+];
+let products = JSON.parse(localStorage.getItem("products")) || defaultProducts;
+localStorage.setItem("products", JSON.stringify(products));
+
+function displayProducts(){
+    const container = document.getElementById("products");
+    container.innerHTML = "";
+    products.forEach(p => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+            <img src="${p.image}">
+            <div class="info">
+                <h3>${p.name}</h3>
+                <p>${p.description}</p>
+                <strong>${p.price} دينار</strong><br>
+                <button class="btn" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">إضافة للسلة</button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+displayProducts();
+
+// سلة المشتريات
+function addToCart(id,name,price){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const exist = cart.find(item=>item.id===id);
+    if(exist){exist.qty+=1;} else{cart.push({id,name,price,qty:1});}
+    localStorage.setItem("cart",JSON.stringify(cart));
+    alert(name+" تم إضافته للسلة!");
+}
+
+function openCart(){
+    document.getElementById("cart-window").style.display="block";
+    loadCart();
+}
+function closeCart(){document.getElementById("cart-window").style.display="none";}
+
+function loadCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const tbody = document.querySelector("#cart-table tbody");
+    tbody.innerHTML="";
+    let totalPrice=0;
+    cart.forEach((item,index)=>{
+        let subtotal=item.price*item.qty;
+        totalPrice+=subtotal;
+        let row=document.createElement("tr");
+        row.innerHTML=`
+            <td>${item.name}</td>
+            <td>${item.price} دينار</td>
+            <td>${item.qty}</td>
+            <td>${subtotal} دينار</td>
+            <td><button onclick="removeItem(${index})" style="background:#ff4d4d;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">حذف</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+    document.getElementById("total").innerText="الإجمالي: "+totalPrice+" دينار";
+}
+function removeItem(index){
+    let cart=JSON.parse(localStorage.getItem("cart"))||[];
+    cart.splice(index,1);
+    localStorage.setItem("cart",JSON.stringify(cart));
+    loadCart();
+}
+
+function sendWhatsApp(){
+    let cart=JSON.parse(localStorage.getItem("cart"))||[];
+    if(cart.length===0){alert("السلة فارغة!"); return;}
+    let message="مرحباً، أرغب في طلب المنتجات التالية:\n";
+    cart.forEach(item=>{message+=`\n${item.name} - الكمية: ${item.qty} - السعر: ${item.price} دينار`;});
+    let total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+    message+=`\n\nالإجمالي: ${total} دينار`;
+    let phone="0931122226";
+    let url=`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>

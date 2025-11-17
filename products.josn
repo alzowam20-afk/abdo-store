@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "ضوء مغناطيسي",
+    "price": "45 دينار",
+    "image": "images/light1.jpg",
+    "description": "إضاءة للتصوير"
+  },
+  {
+    "id": 2,
+    "name": "سماعة بلوتوث",
+    "price": "65 دينار",
+    "image": "images/speaker1.jpg",
+    "description": "صوت قوي وبطارية ممتازة"
+  }
+]

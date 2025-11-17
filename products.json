@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "ضوء مغناطيسي للسيلفي",
+    "description": "إضاءة هادئة ومريحة للعين، تضيف جمال للصور والفيديوهات.",
+    "price": 45,
+    "image": "images/magnetic_fill_light.jpg"
+  },
+  {
+    "id": 2,
+    "name": "هاتف ذكي جديد",
+    "description": "هاتف حديث بأحدث المواصفات وسعة تخزين كبيرة.",
+    "price": 500,
+    "image": "images/smartphone.jpg"
+  },
+  {
+    "id": 3,
+    "name": "سماعات بلوتوث",
+    "description": "سماعات لاسلكية بجودة صوت ممتازة وراحة عند الاستخدام.",
+    "price": 60,
+    "image": "images/bluetooth_headphones.jpg"
+  },
+  {
+    "id": 4,
+    "name": "شاحن سريع",
+    "description": "شاحن سريع لجميع أنواع الهواتف مع حماية من الحرارة الزائدة.",
+    "price": 25,
+    "image": "images/fast_charger.jpg"
+  }
+]

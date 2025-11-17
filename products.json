@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "منتج 1",
+        "price": "20",
+        "image": "https://picsum.photos/300",
+        "description": "وصف بسيط للمنتج"
+    },
+    {
+        "id": 2,
+        "name": "منتج 2",
+        "price": "35",
+        "image": "https://picsum.photos/301",
+        "description": "وصف بسيط للمنتج"
+    }
+]

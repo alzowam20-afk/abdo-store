@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "ضوء مغناطيسي للسيلفي",
+    "price": 45,
+    "description": "إضاءة جميلة للتصوير مع درجات سطوع.",
+    "image": "https://i.imgur.com/7yZ8Z5F.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "سماعات بلوتوث",
+    "price": 60,
+    "description": "صوت قوي وجودة ممتازة.",
+    "image": "https://i.imgur.com/Jg1vQwT.jpeg"
+  }
+]

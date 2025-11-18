@@ -1,42 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر زوام</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-  <h1>متجر Zuwam</h1>
-  <button id="cart-button">🛒 السلة <span id="cart-count">0</span></button>
-</header>
-
-<main>
-  <div id="products" class="products"></div>
-</main>
-
-<!-- السلة -->
-<aside id="cart-popup" class="cart-popup hidden" aria-hidden="true">
-
-  <div class="cart-header">
-    <h2>السلة</h2>
-    <button id="close-cart">✖</button>
-  </div>
-
-  <div id="cart-items" class="cart-items"></div>
-
-  <div class="cart-footer">
-    <div class="total">المجموع: <span id="cart-total">0</span> دينار</div>
-
-    <button id="send-whatsapp" class="wa-btn">إرسال الطلب عبر واتساب</button>
-    <button id="clear-cart" class="clear-btn">تفريغ السلة</button>
-  </div>
-
-</aside>
-
-<script src="script.js"></script>
-</body>
-</html>

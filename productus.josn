@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "ضوء مغناطيسي للتصوير",
+    "price": 45,
+    "description": "إضاءة صغيرة مناسبة للسيلفي أو التصوير الليلي.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/light1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "سماعة بلوتوث",
+    "price": 65,
+    "description": "سماعة لاسلكية بجودة عالية وعزل ضوضاء.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/speaker1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "حمار للبيع",
+    "price": 320,
+    "description": "حمار مطيع وهادئ، مناسب الاستخدامات الزراعية وتربية المواشي.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/product1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "باور بانك 20000 ملّي أمبير",
+    "price": 90,
+    "description": "بطارية محمولة بسعة كبيرة لشحن هاتفك عدة مرات.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/bank1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "ساعة ذكية",
+    "price": 120,
+    "description": "ساعة ذكية مع مراقبة نبضات القلب وعدد الخطوات.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/watch1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "حقيبة ظهر رياضية",
+    "price": 55,
+    "description": "حقيبة ظهر خفيفة ومريحة للسفر أو الرياضة.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/bag1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "كيبورد ميكانيكي",
+    "price": 150,
+    "description": "كيبورد ألعاب بإضاءة RGB وزرّات ميكانيكية.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/kb1.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ماوس ألعاب",
+    "price": 70,
+    "description": "ماوس سريع ودقيق مخصص للألعاب.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/mouse1.jpg"
+  },
+  {
+    "id": 9,
+    "name": "مروحة USB صغيرة",
+    "price": 25,
+    "description": "مروحة صغيرة تعمل عبر USB، مثالية للمكتب أو السيارة.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/fan1.jpg"
+  },
+  {
+    "id": 10,
+    "name": "شاحن مغناطيسي",
+    "price": 35,
+    "description": "شاحن مغناطيسي سريع، مناسب لأجهزة حديثة.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/charger1.jpg"
+  },
+  {
+    "id": 11,
+    "name": "نظارة شمسية رياضية",
+    "price": 40,
+    "description": "نظارة شمسية خفيفة مع عدسات مقاومة للخدش.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/glasses1.jpg"
+  },
+  {
+    "id": 12,
+    "name": "سماعة بودز صغيرة",
+    "price": 55,
+    "description": "سماعة داخل الأذن صغيرة الحجم مع بلوتوث سريع.",
+    "image": "https://raw.githubusercontent.com/alzowam20-afk/abdo-store/main/images/earbuds1.jpg"
+  }
+]

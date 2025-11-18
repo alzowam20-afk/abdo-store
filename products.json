@@ -1,0 +1,6 @@
+[
+  {"id":1,"name":"ضوء مغناطيسي للتصوير","price":45,"description":"إضاءة جميلة للتصوير.","image":"images/light1.jpeg"},
+  {"id":2,"name":"سماعة بلوتوث","price":65,"description":"سماعة بجودة عالية.","image":"images/speaker1.jpeg"},
+  {"id":3,"name":"حمار للبيع","price":320,"description":"حمار مطيع وهادئ.","image":"images/product1.jpeg"},
+  {"id":4,"name":"باور بانك","price":90,"description":"بطارية محمولة كبيرة.","image":"images/bank1.jpeg"}
+]

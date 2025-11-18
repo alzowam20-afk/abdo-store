@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>متجر عبدو — Zuwam Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Zuwam <span class="dot">•</span></div>
+    <div class="title">🔥 متجر عبدو — أفضل المنتجات 🔥</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>منتجات مميزة بأسعار ممتازة</h1>
+      <p>اختَر، اضغط إضافة، عدّل الكمية وأرسل الطلب مباشرة على واتساب.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">منتجاتنا</h2>
+      <div id="products" class="product-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- زر السلة الثابت -->
+  <button id="cart-button" class="cart-button" aria-label="افتح السلة">
+    🛒 السلة (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- Popup السلة -->
+  <aside id="cart-popup" class="cart-popup hidden" role="dialog" aria-hidden="true">
+    <div class="cart-head">
+      <strong>سلة المشتريات</strong>
+      <button id="close-cart" class="icon-btn" aria-label="إغلاق">✖</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>المجموع الكلي:</span>
+        <strong id="cart-total">0</strong><span> دينار</span>
+      </div>
+      <div class="footer-actions">
+        <button id="clear-cart" class="btn secondary">تفريغ السلة</button>
+        <button id="send-whatsapp" class="btn primary">إرسال الطلب على واتس آب</button>
+      </div>
+    </div>
+  </aside>
+
+<script src="script.js" defer></script>
+</body>
+</html>

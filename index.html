@@ -1,39 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر عبدو — Zuwam Shop</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  🔥 متجر عبدو — أفضل المنتجات 🔥
-</header>
-
-<div class="container">
-  <h2>منتجاتنا</h2>
-  <div id="products" class="product-grid"></div>
-</div>
-
-<!-- زر السلة -->
-<button id="cart-button" class="cart-btn">🛒 السلة (<span id="cart-count">0</span>)</button>
-
-<!-- Popup السلة -->
-<div id="cart-popup" class="hidden" aria-hidden="true">
-  <div class="cart-header">
-    <h3>سلتك</h3>
-    <button id="close-cart">✖</button>
-  </div>
-  <div id="cart-items"></div>
-  <div class="cart-footer">
-    <div>المجموع: <span id="cart-total">0</span> دينار</div>
-    <button id="send-whatsapp">إرسال على واتس آب</button>
-    <button id="clear-cart">تفريغ السلة</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
